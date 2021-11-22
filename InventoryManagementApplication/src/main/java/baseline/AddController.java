@@ -1,13 +1,17 @@
 package baseline;
- /*  UCF COP3330 Fall 2021 Application Assignment 2 Solution
-  *  Copyright 2021 Deaja Murphy
-  */
-
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class AddController  {
+import java.io.IOException;
+import java.util.Objects;
+import java.util.regex.Pattern;
+
+public class AddController extends HomeController {
     @FXML
     TextField name;
     @FXML
@@ -18,16 +22,21 @@ public class AddController  {
     TextField numItems;
 
     @FXML
-    private void addItem() {
+    private void addItem() throws IOException {
         //button click
-        //FXML loader = home.fxml resources
-        // parent root = loader
-        // HomeController = loader controller
-        // HomeController.addToList(name.getText, serialNum.getInt...,etc)
-        //
-    }
+        String format = "A-111-111-111";
+        Pattern p = Pattern.compile(format);
+        if(p.matcher(serialNum.getText()).matches()){
+            // all good
+            Item newItem = new Item(name.getText(), price.getText(), numItems.getText(), serialNum.getText());
+            tableview.getItems().add(newItem);
+        } else {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setHeaderText("Input not valid");
+            errorAlert.setContentText("Serial Number Must be in format A-XXX-XXX-XXX");
+            errorAlert.showAndWait();
 
-    private void addToList(String name, String serialNum, Integer price, Integer numItems){
-        //set the value for each using .setText
+        }
+
     }
 }
