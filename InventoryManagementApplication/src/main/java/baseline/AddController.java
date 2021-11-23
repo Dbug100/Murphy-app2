@@ -28,7 +28,7 @@ public class AddController extends HomeController {
         Pattern p = Pattern.compile(format);
         if(p.matcher(serialNum.getText()).matches()){
             // all good
-            Item newItem = new Item(name.getText(), price.getText(), numItems.getText(), serialNum.getText());
+            Item newItem = new Item(name.getText(), serialNum.getText(),"$"+numItems.getText(), price.getAnchor());
             tableview.getItems().add(newItem);
         } else {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);

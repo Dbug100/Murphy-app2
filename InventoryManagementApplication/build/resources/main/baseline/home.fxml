@@ -22,8 +22,6 @@
         <Button fx:id="edit" layoutX="535.0" layoutY="106.0" mnemonicParsing="false" onAction="#editName" prefHeight="25.0" prefWidth="94.0" text="Edit Name" />
         <Button fx:id="nameSort" layoutX="362.0" layoutY="35.0" mnemonicParsing="false" onAction="#nameSort" text="Name Sort" />
         <Button fx:id="serialSort" layoutX="283.0" layoutY="35.0" mnemonicParsing="false" onAction="#serialSort" text="Serial Sort" />
-        <Button fx:id="nameSearch" layoutX="442.0" layoutY="35.0" mnemonicParsing="false" onAction="#nameSearch" text="Name Search" />
-        <Button fx:id="serialSearch" layoutX="540.0" layoutY="35.0" mnemonicParsing="false" onAction="#serialSearch" text="Serial Search" />
         <Button fx:id="saveList" layoutX="537.0" layoutY="139.0" mnemonicParsing="false" onAction="#saveList" text="Save Inventory" />
         <TextField fx:id="searchBar" layoutX="14.0" layoutY="35.0" prefHeight="25.0" prefWidth="262.0" promptText="Enter Search Item" />
         <Button layoutX="526.0" layoutY="73.0" mnemonicParsing="false" onAction="#editSerialNum" text="Edit Serial Number" />
